@@ -31,7 +31,7 @@ class PostsController < ApplicationController
 
     if @post.save
       flash[:notice] = "Post added!"
-      redirect_to posts_path
+      redirect_to @post
     else
       flash[:alert] = "There was a problem. Your post was not added."
       render :new
@@ -64,6 +64,6 @@ class PostsController < ApplicationController
 
     # Only allow a trusted parameter "white list" through.
     def post_params
-      params.require(:post).permit(:title, :body, :author)
+      params.require(:post).permit(:title, :body)
     end
 end
