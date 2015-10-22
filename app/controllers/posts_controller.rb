@@ -4,19 +4,25 @@ class PostsController < ApplicationController
   # GET /posts
   def index
     @posts = Post.all
+    render :index
   end
 
   # GET /posts/1
   def show
+    @post = Post.find(params[:id])
+    render :show
   end
 
   # GET /posts/new
   def new
     @post = Post.new
+    render :new
   end
 
   # GET /posts/1/edit
   def edit
+    @post = Post.find(params[:id])
+    render :edit
   end
 
   # POST /posts
@@ -24,8 +30,10 @@ class PostsController < ApplicationController
     @post = Post.new(post_params)
 
     if @post.save
-      redirect_to @post, notice: 'Post was successfully created.'
+      flash[:notice] = "Post added!"
+      redirect_to posts_path
     else
+      flash[:alert] = "There was a problem. Your post was not added."
       render :new
     end
   end
@@ -33,7 +41,8 @@ class PostsController < ApplicationController
   # PATCH/PUT /posts/1
   def update
     if @post.update(post_params)
-      redirect_to @post, notice: 'Post was successfully updated.'
+      flash[:notice] = 'Post was successfully updated.'
+      redirect_to posts_path
     else
       render :edit
     end
@@ -41,8 +50,10 @@ class PostsController < ApplicationController
 
   # DELETE /posts/1
   def destroy
+    @post = Post.find(params[:id])
     @post.destroy
-    redirect_to posts_url, notice: 'Post was successfully destroyed.'
+    flash[:notice] = 'Post was successfully deleted.'
+    redirect_to posts_url
   end
 
   private
@@ -53,6 +64,6 @@ class PostsController < ApplicationController
 
     # Only allow a trusted parameter "white list" through.
     def post_params
-      params.require(:post).permit(:title, :body)
+      params.require(:post).permit(:title, :body, :author)
     end
 end
