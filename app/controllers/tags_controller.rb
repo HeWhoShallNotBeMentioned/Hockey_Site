@@ -1,5 +1,13 @@
 class TagsController < ApplicationController
 
+  def show
+    @tags = Tag.all
+    @posts = Post.all
+    @tag = Tag.find(params[:id])
+    @post = Post.find(params[:id])
+    render :show
+  end
+
   def new
     @post = Post.find(params[:post_id])
     @tag = Tag.new
@@ -37,13 +45,6 @@ class TagsController < ApplicationController
     tag.destroy
     redirect_to admins_path
   end
-
-  def show
-    @tags = Tag.all
-    @posts = Post.all
-    @tag = Tag.find(params[:id])
-  end
-
 
 private
   def tag_params
