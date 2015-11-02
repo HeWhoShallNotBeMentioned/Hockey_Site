@@ -1,14 +1,11 @@
 <p id="notice"><%= notice %></p>
 
-<p>
-  <strong>Title:</strong>
+<h2>
   <%= @post.title %>
-</p>
+</h2>
 
-<p>
-  <strong>Body:</strong>
-  <%= @post.body %>
-</p>
+<p><%= @post.body %></p>
+
 Tags:
 <% @post.tags.each do |tag| %>
   <%= tag.name  %> <%= link_to 'Edit', edit_post_tag_path(@post, tag) %> <%= link_to 'Delete', post_tag_path(@post, tag), data: {confirm: "Are you sure?", method: "delete"}%></li>
@@ -18,3 +15,14 @@ Tags:
 <%= link_to 'Edit', edit_post_path(@post) %>
 <br>
 <%= link_to 'Back', posts_path %>
+
+<h3>Comments</h3>
+<% @post.comments.each do |comment| %>
+  <%= comment.body  %> <%= link_to 'Edit', edit_post_comment_path(@post, comment) %> <%= link_to 'Delete', post_comment_path(@post, comment), data: {confirm: "Are you sure?", method: "delete"}%></li>
+<br>
+<% end %>
+<br>
+
+
+
+<%= link_to 'New Comment', new_post_comment_path(@post) %>

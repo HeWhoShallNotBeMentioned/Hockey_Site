@@ -11,6 +11,7 @@ class CommentsController < ApplicationController
   def new
     @post = Post.find(params[:post_id])
     @comment = Comment.new
+    render :new
   end
 
   def create
@@ -47,6 +48,7 @@ class CommentsController < ApplicationController
 
 
   private
+    def comment_params
     params.require(:comment).permit(:author, :body)
   end
 end
