@@ -1,9 +1,17 @@
 <p id="notice"><%= notice %></p>
 
-<h2>
+<div id="post_show_message">
+
+
+<h2 >
   <%= @post.title %>
 </h2>
 <p><%= @post.body %></p>
+</div>
+<p>
+  <%= link_to 'Edit', edit_post_path(@post), remote: true, id: 'edit_post_link' %>
+  <%= link_to 'Destroy', @post, method: :delete, data: { confirm: 'Are you sure?' } %>
+</p>
 
 Tags:
 <% @post.tags.each do |tag| %>

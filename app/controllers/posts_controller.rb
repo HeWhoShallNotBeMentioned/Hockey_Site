@@ -32,10 +32,25 @@ class PostsController < ApplicationController
 
     if @post.save
       flash[:notice] = "Post added!"
-      redirect_to @post
+      respond_to do |format|
+        format.js
+        format.html {redirect posts_path}
+      end
     else
       flash[:alert] = "There was a problem. Your post was not added."
-      render :new
+      respond_to do |format|
+        format.js
+        format.html {render :new}
+      end
+    end
+  end
+
+  # GET /posts/1/edit
+  def edit
+    @post = Post.find(params[:id])
+    respond_to do |format|
+      format.js
+      format.html {render :edit}
     end
   end
 
@@ -43,7 +58,7 @@ class PostsController < ApplicationController
   def update
     if @post.update(post_params)
       flash[:notice] = 'Post was successfully updated.'
-      redirect_to posts_path
+      redirect_to post_path
     else
       render :edit
     end
