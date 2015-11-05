@@ -10,7 +10,9 @@ Rails.application.routes.draw do
     resources :tags
   end
 
-  resources :tags
+  resources :stats_leader
+
+
 
 
   # The priority is based upon order of creation: first created -> highest priority.

@@ -11,6 +11,8 @@ gem 'sass-rails', '>= 3.2'
 gem 'bcrypt', '~> 3.1.7'
 gem 'devise'
 gem 'hirb', '~>0.7.0'
+gem 'httparty'
+gem 'dotenv-rails'
 
 group :development do
   gem 'byebug'
