@@ -1,3 +1,14 @@
 <h1>Stats Home</h1>
 
-<%= @season_id %>
+<%= @season_year %>
+
+<br>
+
+<% @categories_list.each do |category, type| %>
+  <%= category %>    -          <%= type %>
+  <br>
+  <% @players_list.each do |rank, score| %>
+    <%= rank %> - <%= score %>
+    <br>
+  <% end %>
+<% end %>
