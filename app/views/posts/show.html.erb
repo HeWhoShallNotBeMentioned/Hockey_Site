@@ -15,7 +15,7 @@
 
 Tags:
 <% @post.tags.each do |tag| %>
-  <%= link_to tag.name, tag_path(tag)  %> <%= link_to 'Edit', edit_post_tag_path(@post, tag) %> <%= link_to 'Delete', tag_post_path(@post, tag), remove_tag: "true", data: {confirm: "Are you sure?", method: patch} %></li>
+  <%= link_to tag.name, tag_path(tag)  %> <%= link_to 'Edit', edit_post_tag_path(@post, tag) %> <%= link_to 'Delete', tag_post_path(tag, @post, remove_tag: "true"), data: {confirm: "Are you sure?", method: "patch"} %></li>
 <% end %>
 <br>
 <%= link_to 'New Tag', new_post_tag_path(@post) %> |
@@ -25,7 +25,7 @@ Tags:
 
 <h3>Comments</h3>
 <% @post.comments.each do |comment| %>
-  <%= comment.body  %> <%= link_to 'Edit', edit_post_comment_path(@post, comment) %> <%= link_to 'Delete', post_comment_path(@post, comment), data: {confirm: "Are you sure?", method: "delete"}%></li>
+  <%= comment.body  %> <%= link_to 'Edit', edit_post_comment_path(@post, comment) %> <%= link_to 'Delete', post_comment_path(@post, comment), data: {confirm: "Are you sure?"}, method: "put"%></li>
 <br>
 <% end %>
 <br>

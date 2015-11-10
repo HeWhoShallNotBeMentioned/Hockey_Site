@@ -58,8 +58,12 @@ class PostsController < ApplicationController
 
   # PATCH/PUT /posts/1
   def update
-  binding.pry
-    if @post.update(post_params)
+    if params[:remove_tag]
+      @tag = Tag.find(params[:tag_id])
+      @post = Post.find(params[:id])
+      @post.tags.delete(@tag)
+      redirect_to post_path(@post)
+    elsif @post.update(post_params)
       flash[:notice] = 'Post was successfully updated.'
       redirect_to post_path
     else
