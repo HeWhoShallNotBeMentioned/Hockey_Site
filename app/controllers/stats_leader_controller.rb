@@ -8,7 +8,7 @@ class StatsLeaderController < ActionController::Base
     @categories = @response.parsed_response["categories"]
     @categories_list = @categories.map { |x| [x['name'], x['type']] }
 
-    @players = @response.parsed_response["season"]["categories"]["ranks"]
+    #@players = @response.parsed_response["season"]["categories"]["ranks"]
     @players_list = @players.map { |x| [x['rank'], x['score']] }
 
     respond_to do |format|

@@ -15,7 +15,7 @@ class TagsController < ApplicationController
 
   def create
     @post = Post.find(params[:post_id])
-    @tag = @post.tags.new(tag_params)
+    @tag = Tag.find_or_create_by(tag_params)
     @post.tags.push(@tag)
     if @tag.save
       redirect_to post_path(@post)
