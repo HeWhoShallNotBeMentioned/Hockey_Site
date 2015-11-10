@@ -15,11 +15,12 @@ class TagsController < ApplicationController
 
   def create
     @post = Post.find(params[:post_id])
-    @tag = Tag.find_or_create_by(tag_params)
-    @post.tags.push(@tag)
-    if @tag.save
+    if @tag = Tag.find_or_create_by(tag_params)
+      @post.tags.push(@tag)
+      flash[:notice] = "Tag added!"
       redirect_to post_path(@post)
     else
+      flash[:alert] = "There was a problem. Your tag was not added."
       render :new
     end
   end
@@ -40,10 +41,10 @@ class TagsController < ApplicationController
   end
 
   def destroy
-    # @post = Post.find(params[:post_id])
+    @post = Post.find(params[:post_id])
     tag = Tag.find(params[:id])
     tag.destroy
-    redirect_to admins_path
+    redirect_to post_path(@post)
   end
 
 private

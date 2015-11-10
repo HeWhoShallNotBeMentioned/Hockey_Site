@@ -1,6 +1,6 @@
 class PostsController < ApplicationController
   before_filter :authenticate_user!, except: [:index, :show]
-  before_action :set_post, only: [:show, :edit, :update, :destroy]
+  # before_action :set_post, only: [:show, :edit, :update, :destroy]
 
   # GET /posts
   def index
@@ -10,6 +10,7 @@ class PostsController < ApplicationController
 
   # GET /posts/1
   def show
+    @posts = Post.all
     @post = Post.find(params[:id])
     render :show
   end
@@ -23,6 +24,7 @@ class PostsController < ApplicationController
   # GET /posts/1/edit
   def edit
     @post = Post.find(params[:id])
+
     render :edit
   end
 
@@ -56,6 +58,7 @@ class PostsController < ApplicationController
 
   # PATCH/PUT /posts/1
   def update
+  binding.pry
     if @post.update(post_params)
       flash[:notice] = 'Post was successfully updated.'
       redirect_to post_path
@@ -74,9 +77,9 @@ class PostsController < ApplicationController
 
   private
     # Use callbacks to share common setup or constraints between actions.
-    def set_post
-      @post = Post.find(params[:id])
-    end
+    # def set_post
+    #   @post = Post.find(params[:id])
+    # end
 
     # Only allow a trusted parameter "white list" through.
     def post_params

@@ -10,6 +10,10 @@ Rails.application.routes.draw do
     resources :tags
   end
 
+  resources :tags do
+    resources :posts
+  end
+
   resources :stats_leader
 
 
