@@ -22,7 +22,7 @@ class CommentsController < ApplicationController
     if @post.comments.create(comment_params)
       redirect_to @post, notice: 'Comment was successfully added.'
     else
-      rediredt_to @post, alert: "Error creating comment."
+      redirect_to @post, alert: "Error creating comment."
     end
   end
 
@@ -31,7 +31,7 @@ class CommentsController < ApplicationController
     @comment = Comment.find(params[:id])
     respond_to do |format|
       format.js
-      format.html {render :edit}
+      format.html
     end
   end
 
