@@ -13,6 +13,8 @@ gem 'devise'
 gem 'hirb', '~>0.7.0'
 gem 'httparty'
 gem 'dotenv-rails'
+gem 'redis'
+gem 'jsonpath', '~> 0.5.8'
 
 group :development do
   gem 'byebug'

@@ -4,8 +4,22 @@
 
 <br>
 
+
+
 <% @categories_list.each do |category, type| %>
-  <%= category %>    -          <%= type %>
+
+
+
+  <h3><%= category %> -  <%= type %></h3>
   <br>
-  
+  <h4>Rank  Name       Total    Team</h4>
+  <br>
+  <% while (@current_rank >= @last_rank) do %>
+
+    <% @last_rank = @rankArray.first() %>
+    <%= @rankArray.shift %> <%= @playerNameArray.shift %> <%= @scoreArray.shift %> <%= @teamCityArray.shift %>
+    <br>
+    <% @current_rank = @rankArray.first() %>
+  <% end %>
+
 <% end %>
