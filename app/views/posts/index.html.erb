@@ -6,12 +6,12 @@
     <h2><%= link_to post.title, post %></h2>
     <p><%= friendly_date post.created_at %></p>
     <p><%= post.body %></p>
-    <p>    
+    <p>
     </p>
   <% end %>
 </article>
-
-
 <br>
 
-<%= link_to 'New Post', new_post_path, remote: true, id: "new_post_link" %>
+<% if current_user  %>
+  <%= link_to 'New Post', new_post_path, class: 'btn btn-success', remote: true, id: "new_post_link" %>
+<% end %>

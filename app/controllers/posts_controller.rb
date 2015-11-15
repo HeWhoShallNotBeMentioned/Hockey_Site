@@ -36,7 +36,7 @@ class PostsController < ApplicationController
       flash[:notice] = "Post added!"
       respond_to do |format|
         format.js
-        format.html {redirect posts_path}
+        format.html {redirect_to posts_path}
       end
     else
       flash[:alert] = "There was a problem. Your post was not added."
