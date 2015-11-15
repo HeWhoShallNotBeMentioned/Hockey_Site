@@ -21,13 +21,6 @@ class PostsController < ApplicationController
     render :new
   end
 
-  # GET /posts/1/edit
-  def edit
-    @post = Post.find(params[:id])
-
-    render :edit
-  end
-
   # POST /posts
   def create
     @post = Post.new(post_params)
@@ -74,6 +67,7 @@ class PostsController < ApplicationController
   # DELETE /posts/1
   def destroy
     @post = Post.find(params[:id])
+    #delete all post.tags  may need to find all tags first.
     @post.destroy
     flash[:notice] = 'Post was successfully deleted.'
     redirect_to posts_url

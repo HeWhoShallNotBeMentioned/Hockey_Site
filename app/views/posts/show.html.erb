@@ -2,34 +2,48 @@
 
 <div id="post_show_message">
 
-
 <h2 >
   <%= @post.title %>
 </h2>
 <p><%= @post.body %></p>
 </div>
 <p>
-  <%= link_to 'Edit', edit_post_path(@post), remote: true, id: 'edit_post_link' %>
-  <%= link_to 'Destroy', @post, method: :delete, data: { confirm: 'Are you sure?' } %>
+  <% if current_user && current_user.admin %>
+    <%= link_to 'Edit', edit_post_path(@post), class: 'btn btn-info', remote: true, id: 'edit_post_link' %>
+    <%= link_to 'Destroy', @post, class: 'btn btn-danger', method: :delete, data: { confirm: 'Are you sure?' } %>
+  <% end %>
 </p>
 
 Tags:
 <% @post.tags.each do |tag| %>
-  <%= link_to tag.name, tag_path(tag)  %> <%= link_to 'Edit', edit_post_tag_path(@post, tag) %> <%= link_to 'Delete', tag_post_path(tag, @post, remove_tag: "true"), data: {confirm: "Are you sure?", method: "patch"} %></li>
+  <%= link_to tag.name, tag_path(tag)  %>
+    <% if current_user && current_user.admin %>
+      <%= link_to 'Edit', edit_post_tag_path(@post, tag), class: 'btn btn-info' %>
+      <%= link_to 'Delete', tag_post_path(tag, @post, remove_tag: "true"), class: 'btn btn-danger', data: {confirm: "Are you sure?", method: "delete"} %></li>
+    <% end %>
 <% end %>
 <br>
-<%= link_to 'New Tag', new_post_tag_path(@post) %> |
-<%= link_to 'Edit', edit_post_path(@post) %>
-<br>
-<%= link_to 'Back', posts_path %>
+<% if current_user %>
+  <%= link_to 'New Tag', new_post_tag_path(@post), class: 'btn btn-success'%>
+<% end %><br>
+
 
 <h3>Comments</h3>
-<% @post.comments.each do |comment| %>
-  <%= comment.body  %> <%= link_to 'Edit', edit_post_comment_path(@post, comment) %> <%= link_to 'Delete', post_comment_path(@post, comment), data: {confirm: "Are you sure?"}, method: "put"%></li>
-<br>
+<article class="comment_messages">
+  <% @post.comments.each do |comment| %>
+    <%= comment.body  %>
+    <br>
+    <br>
+    <% if current_user && current_user.admin %>
+      <%= link_to 'Edit', edit_post_comment_path(@post, comment), class: 'btn btn-info' %> <%= link_to 'Delete', post_comment_path(@post, comment), class: 'btn btn-danger', data: {confirm: "Are you sure?"}, method: "delete"%>
+    <% end %>
+    <br>
+  <% end %>
+</article>
+  <br>
+
+
+
+<% if current_user %>
+  <%= link_to 'New Comment', new_post_comment_path(@post), class: 'btn btn-success',remote: true, id: "new_comment_link" %>
 <% end %>
-<br>
-
-
-
-<%= link_to 'New Comment', new_post_comment_path(@post) %>

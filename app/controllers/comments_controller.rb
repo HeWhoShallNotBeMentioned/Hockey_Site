@@ -1,4 +1,6 @@
 class CommentsController < ApplicationController
+    before_filter :authenticate_user!
+    before_action :set_comment, only: [:show, :edit, :update, :destroy]
 
   def show
     @comments = Comment.all
@@ -27,6 +29,10 @@ class CommentsController < ApplicationController
   def edit
     @post = Post.find(params[:post_id])
     @comment = Comment.find(params[:id])
+    respond_to do |format|
+      format.js
+      format.html {render :edit}
+    end
   end
 
   def update
@@ -43,12 +49,16 @@ class CommentsController < ApplicationController
     @post = Post.find(params[:post_id])
     comment = Comment.find(params[:id])
     comment.destroy
-    redirect_to posts_path, notice:  "Comment was successfully deleted."
+    redirect_to post_path(@post), notice:  "Comment was successfully deleted."
   end
 
 
   private
-    def comment_params
-    params.require(:comment).permit(:author, :body)
+  def set_comment
+    @comment = Comment.find(params[:id])
+  end
+
+  def comment_params
+    params.require(:comment).permit(:body, :post_id)
   end
 end
