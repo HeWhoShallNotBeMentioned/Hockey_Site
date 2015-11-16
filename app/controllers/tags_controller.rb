@@ -1,4 +1,6 @@
 class TagsController < ApplicationController
+  before_filter :authenticate_user!
+  before_action :set_tag, only: [:show, :edit, :update, :destroy]
 
   def show
     @tags = Tag.all
@@ -11,6 +13,7 @@ class TagsController < ApplicationController
   def new
     @post = Post.find(params[:post_id])
     @tag = Tag.new
+    render :new
   end
 
   def create
@@ -28,14 +31,20 @@ class TagsController < ApplicationController
   def edit
     @post = Post.find(params[:post_id])
     @tag = Tag.find(params[:id])
+    respond_to do |format|
+      format.js
+      format.html
+    end
   end
 
   def update
     @post = Post.find(params[:post_id])
     @tag = Tag.find(params[:id])
     if @tag.update(tag_params)
+      flash[:notice] = "Tag edited!"
       redirect_to post_path(@post)
     else
+      flash[:alert] = "There was a problem. Your tag was not edited."
       render :edit
     end
   end
@@ -44,10 +53,16 @@ class TagsController < ApplicationController
     @post = Post.find(params[:post_id])
     tag = Tag.find(params[:id])
     tag.destroy
+    flash[:notice] = "Tag deleted!"
     redirect_to post_path(@post)
   end
 
 private
+
+  def set_tag
+    @tag = Tag.find(params[:id])
+  end
+
   def tag_params
     params.require(:tag).permit(:name, :post_id)
   end

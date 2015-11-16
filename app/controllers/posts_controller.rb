@@ -67,8 +67,12 @@ class PostsController < ApplicationController
   # DELETE /posts/1
   def destroy
     @post = Post.find(params[:id])
+
     #delete all post.tags  may need to find all tags first.
+
     @post.destroy
+    @post.tags.delete
+
     flash[:notice] = 'Post was successfully deleted.'
     redirect_to posts_url
   end

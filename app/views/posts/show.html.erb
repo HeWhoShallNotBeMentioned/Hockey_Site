@@ -10,23 +10,31 @@
 <p>
   <% if current_user && current_user.admin %>
     <%= link_to 'Edit', edit_post_path(@post), class: 'btn btn-info', remote: true, id: 'edit_post_link' %>
-    <%= link_to 'Destroy', @post, class: 'btn btn-danger', method: :delete, data: { confirm: 'Are you sure?' } %>
+    <%= link_to 'Delete', @post, class: 'btn btn-danger', method: :delete, data: { confirm: 'Are you sure?' } %>
   <% end %>
 </p>
 
-Tags:
-<% @post.tags.each do |tag| %>
-  <%= link_to tag.name, tag_path(tag)  %>
-    <% if current_user && current_user.admin %>
-      <%= link_to 'Edit', edit_post_tag_path(@post, tag), class: 'btn btn-info' %>
-      <%= link_to 'Delete', tag_post_path(tag, @post, remove_tag: "true"), class: 'btn btn-danger', data: {confirm: "Are you sure?", method: "delete"} %></li>
-    <% end %>
-<% end %>
-<br>
-<% if current_user %>
-  <%= link_to 'New Tag', new_post_tag_path(@post), class: 'btn btn-success'%>
-<% end %><br>
+<h3>Tags:</h3>
+<div class="tag_messages">
+  <% @post.tags.each do |tag| %>
+    <%= link_to tag.name, tag_path(tag)  %>
+      <% if current_user && current_user.admin %>
+      <br>
+        <%= link_to 'Edit', edit_post_tag_path(@post, tag), class: 'btn btn-info', remote: true, id: "edit_tag_link" %>
+        <%= link_to 'Delete', post_tag_path(@post, tag, remove_tag: "true"), class: 'btn btn-danger', data: {confirm: "Are you sure?", method: "delete"} %></li>
+      <% end %>
+      <br>
+      <br>
+  <% end %>
+</div>
+  <div id="tag_show_message">
+  </div>
 
+
+  <% if current_user %>
+    <%= link_to 'New Tag', new_post_tag_path(@post), class: 'btn btn-success', remote: true, id: "new_tag_link"%>
+  <% end %><br>
+  <br>
 
 <h3>Comments</h3>
 <article class="comment_messages">
@@ -34,7 +42,6 @@ Tags:
     <div id="comment_show_message">
       <%= comment.body  %>
     </div>
-    <br>
     <br>
     <% if current_user && current_user.admin %>
       <%= link_to 'Edit', edit_post_comment_path(@post, comment), class: 'btn btn-info',remote: true, id: "edit_comment_link" %>

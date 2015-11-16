@@ -106,7 +106,8 @@ posts_tags_list = [
   [2,4],
   [4,5],
   [5,6],
-
+  [2,1],
+  [5,1]
 ]
 
 posts_tags_list.each do |post, tag|
