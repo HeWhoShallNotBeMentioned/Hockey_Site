@@ -1,4 +1,4 @@
-<h1>Tag: <%= @tag %>      </h1>
+<h1>Tag: <%= @tag.name %>      </h1>
 
 <% @tag.posts.each do |post| %>
   <%= link_to post.title, post_path(post) %>
