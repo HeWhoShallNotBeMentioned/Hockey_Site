@@ -17,7 +17,7 @@ Rails.application.routes.draw do
   resources :stats_leader
 
   namespace :api do
-    resources :posts
+    resources :posts, defaults: { format: 'json' }
   end
 
 
