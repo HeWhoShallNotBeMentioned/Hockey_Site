@@ -5,7 +5,7 @@ class TagsController < ApplicationController
   def show
     @tags = Tag.all
     @posts = Post.all
-    @post = Post.find(params[:id])
+
     @tag = Tag.find(params[:id])
     render :show
   end

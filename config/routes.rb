@@ -16,6 +16,8 @@ Rails.application.routes.draw do
 
   resources :stats_leader
 
+  resources :schedules
+
   namespace :api do
     resources :posts, defaults: { format: 'json' }
   end
