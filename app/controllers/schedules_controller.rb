@@ -6,7 +6,7 @@ class SchedulesController < ApplicationController
   def index
     require 'net/http'
 
-    today = Date.yesterday
+    today = '2016-03-12'
 
     uri = URI("https://api.fantasydata.net/nhl/v2/JSON/GamesByDate/#{today}")
     uri.query = URI.encode_www_form({
@@ -24,7 +24,6 @@ class SchedulesController < ApplicationController
 
     puts @response.body
 
-    @away_team = []
     @response_body = []
     @response_body = JSON.parse(@response.body)
     @away_team = @response_body.map{|x| x["AwayTeam"]}

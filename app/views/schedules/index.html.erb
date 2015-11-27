@@ -1,15 +1,22 @@
 <h1 align="center">Today's Schedule  - <%= Date.today %></h1>
 <br>
-<table style="width:100%">
-  <th> Away Team </th>
-  <th> Home Team </th>
-  <th> Date & Time</th>
-<% @response_body.each do |awayteam, hometeam, date| %>
-  <tr>
-    <td><%= @away_team.shift %></td>
-    <td><%= @home_team.shift %></td>
-    <td><%= @date_time.shift %></td>
-  </tr>
+<table style="width:100%" id="myTable" class="tablesorter tablesorter-default">
+  <thead>
+    <tr>
+      <th> Away Team </th>
+      <th> Home Team </th>
+      <th> Date & Time</th>
+    </tr>
+  </thead>
+  <tbody>
+    <% @response_body.each do |awayteam, hometeam, date| %>
 
-  <% end %>
+        <tr>
+          <td><%= @away_team.shift %></td>
+          <td><%= @home_team.shift %></td>
+          <td><%= @date_time.shift %></td>
+        </tr>
+
+    <% end %>
+  </tbody>
 </table>

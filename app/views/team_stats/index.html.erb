@@ -1,0 +1,41 @@
+<h1 align="center"> Team Stats </h1>
+<br>
+<table style="width:100%" id="myTable" class="tablesorter tablesorter-default">
+  <thead>
+    <tr>
+  <th><%= link_to "Player Name", :sort => "Name" %></th>
+  <th><%= link_to "Position", :sort => "Position" %></th>
+  <th><%= link_to "Games", :sort => "Games" %></th>
+  <th><%= link_to "Goals", :sort => "Goals" %></th>
+  <th><%= link_to "Assists", :sort => "Assists" %></th>
+  <th><%= link_to "Points", :sort => "Points" %></th>
+  <th><%= link_to "+/-", :sort => "PlusMinus" %></th>
+  <th><%= link_to "Hits", :sort => "Hits" %></th>
+  <th><%= link_to "Blocks", :sort => "Blocks" %></th>
+  <th><%= link_to "Penalty Minutes", :sort => "PenaltyMinutes" %></th>
+  <th><%= link_to "Take Aways", :sort => "Takeaways" %></th>
+  <th><%= link_to "Give Aways", :sort => "Giveaways" %></th>
+</tr>
+  </thead>
+  <tbody>
+  <% @response_body.each do |player_name, player_position, player_games, player_goals, player_assists, player_plus_minus, player_hits, player_blocks, player_penalities, player_takeaways, player_giveaways| %>
+    <% @player_points = @player_goals.first.to_i + @player_assists.first.to_i %>
+  <tr>
+    <td><%= @player_name.shift %></td>
+    <td><%= @player_position.shift %></td>
+    <td><%= @player_games.shift %></td>
+    <td><%= @player_goals.shift %></td>
+    <td><%= @player_assists.shift %></td>
+    <td><%= @player_points %></td>
+    <td><%= @player_plus_minus.shift %></td>
+    <td><%= @player_hits.shift %></td>
+    <td><%= @player_blocks.shift %></td>
+    <td><%= @player_penalities.shift %></td>
+    <td><%= @player_takeaways.shift %></td>
+    <td><%= @player_giveaways.shift %></td>
+  </tr>
+<% end %>
+</tbody>
+</table>
+ <br>
+ <br>
