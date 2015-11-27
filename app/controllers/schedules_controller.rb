@@ -6,7 +6,7 @@ class SchedulesController < ApplicationController
   def index
     require 'net/http'
 
-    today = '2016-03-12'
+    today = Date.today
 
     uri = URI("https://api.fantasydata.net/nhl/v2/JSON/GamesByDate/#{today}")
     uri.query = URI.encode_www_form({
