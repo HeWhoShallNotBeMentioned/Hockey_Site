@@ -1,14 +1,16 @@
 <p id="notice"><%= notice %></p>
 
 <h1>Listing Posts</h1>
-<article class="post_messages"
-  <% @posts.each do |post| %>
-    <h2><%= link_to post.title, post %></h2>
-    <p><%= friendly_date post.created_at %></p>
-    <p><%= truncate(post.body, :length => 150) %></p>
-    <p>
-    </p>
-  <% end %>
+<article class="post_messages">
+  <%= will_paginate @posts %>
+    <% @posts.each do |post| %>
+      <h2><%= link_to post.title, post %></h2>
+      <p><%= friendly_date post.created_at %></p>
+      <p><%= truncate(post.body, :length => 150) %></p>
+      <p>
+      </p>
+    <% end %>
+  <%= will_paginate @posts %>
 </article>
 <br>
 

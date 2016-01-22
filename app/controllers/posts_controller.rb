@@ -4,7 +4,7 @@ class PostsController < ApplicationController
 
   # GET /posts
   def index
-    @posts = Post.all
+    @posts = Post.all.paginate(page: params[:page], per_page: 2)
     render :index
   end
 
