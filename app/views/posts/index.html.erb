@@ -5,7 +5,7 @@
   <% @posts.each do |post| %>
     <h2><%= link_to post.title, post %></h2>
     <p><%= friendly_date post.created_at %></p>
-    <p><%= post.body %></p>
+    <p><%= truncate(post.body, :length => 150) %></p>
     <p>
     </p>
   <% end %>
