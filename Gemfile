@@ -17,6 +17,7 @@ gem 'redis'
 gem 'jsonpath', '~> 0.5.8'
 gem 'jquery-tablesorter', '~> 1.19', '>= 1.19.4'
 gem 'jquery-turbolinks'
+gem 'will_paginate'
 
 group :development do
   gem 'byebug'
