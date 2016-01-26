@@ -3,11 +3,19 @@ class TeamStatsController < ApplicationController
   require 'json'
   require 'jsonpath'
 
+
+
   def index
+    team = ""
 
   require 'net/http'
 
-  @team = "DET"
+  if team.blank?
+    @team = params[:VAN]
+  else
+    team = @team
+  end
+
 
   uri = URI("https://api.fantasydata.net/nhl/v2/JSON/PlayerSeasonStatsByTeam/2016/#{@team}")
   uri.query = URI.encode_www_form({
@@ -38,10 +46,6 @@ class TeamStatsController < ApplicationController
   @player_penalities = @response_body.map{|x| x["PenaltyMinutes"]}
   @player_takeaways = @response_body.map{|x| x["Takeaways"]}
   @player_giveaways = @response_body.map{|x| x["Giveaways"]}
-
-
-
   end
-
 
 end

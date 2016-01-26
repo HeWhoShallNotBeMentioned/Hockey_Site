@@ -1,5 +1,13 @@
 <h1 align="center"> Team Stats </h1>
+
 <br>
+
+<form action="" method="get">
+  <%= select_tag(@team, options_for_select([ ['Red Wings', "DET"], ['Rangers', 'NYR'], ['Canucks', 'VAN'],['Canadians', 'MON'], ['Bruins', 'BOS'] ])) %>
+  <input type="submit" value="Submit This Form">
+
+</form>
+
 <table style="width:100%" id="myTable" class="tablesorter tablesorter-default">
   <thead>
     <tr>
