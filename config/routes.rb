@@ -14,8 +14,6 @@ Rails.application.routes.draw do
     resources :posts
   end
 
-  resources :stats_leader
-
   resources :schedules
 
   resources :team_stats
