@@ -51,9 +51,8 @@ SportsRadar API
 
 ### License
 
-*{Determine the license under which this application can be used.  See below for more details on licensing.}*
 
-Copyright (c) 2015 **_{List of contributors or company name}_**
+Copyright (c) 2015 Chris Underwood
 Licensing
 An open source license details how others can use your code. MIT and GPL are the most common licenses. An MIT license means your code is free to use by anyone and you are not liable (Rails and jQuery use an MIT license). GPL also indicates free usage of the code but when used, the resulting work MUST be open source (Linux, Git and Wordpress use GPL).
 
