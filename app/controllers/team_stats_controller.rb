@@ -6,15 +6,11 @@ class TeamStatsController < ApplicationController
 
 
   def index
-    team = ""
+
 
   require 'net/http'
 
-  if team.blank?
-    @team = params[:VAN]
-  else
-    team = @team
-  end
+    @team = "DET"
 
 
   uri = URI("https://api.fantasydata.net/nhl/v2/JSON/PlayerSeasonStatsByTeam/2016/#{@team}")
