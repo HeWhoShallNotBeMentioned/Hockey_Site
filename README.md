@@ -50,7 +50,7 @@ JSON
 SportsRadar API
 
 ### License
-
+£
 
 Copyright (c) 2015 Chris Underwood
 Licensing
