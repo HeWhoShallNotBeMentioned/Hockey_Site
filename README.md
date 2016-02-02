@@ -38,7 +38,7 @@ Chris Underwood - email cunderwoodmn at gmail dot com
 
 ## Technologies Used
 
-Postgress
+Postgres
 Ruby 2.2
 Rails 4.2.5
 AJAX
