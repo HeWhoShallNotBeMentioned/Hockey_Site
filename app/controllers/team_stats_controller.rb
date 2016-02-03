@@ -10,7 +10,7 @@ class TeamStatsController < ApplicationController
 
   require 'net/http'
 
-    @team = "DET"
+    @team = params[:team] || "NYR"
 
 
   uri = URI("https://api.fantasydata.net/nhl/v2/JSON/PlayerSeasonStatsByTeam/2016/#{@team}")
