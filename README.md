@@ -15,7 +15,7 @@ Consists of posts, comments, and tags. All users can view blog posts, comments, 
 
 Team Stats:
 
-Must be an authenticated user to view stats. Column heading are sortable. Data is from live SportsRadar API. Currently this is set to a default of one team. I am working on having this set up to be any NHL team.
+Must be an authenticated user to view stats. Column heading are sortable. Data is from live SportsRadar API using their testing database. There are currently 5 teams that can be chosen. If I ever go with live/accurate/pay data, will look to add other teams.
 
 Daily Schedule:
 
@@ -33,7 +33,9 @@ localhost:3000 in your browser of choice
 
 ## Known Bugs
 
-The NHL stats page is only set for one team. It will not switch to other teams.
+At this time, the application is believed to behave as designed. Please let me know if you find any bugs.
+
+Integration tests are not working.
 
 ## Support and contact details
 
