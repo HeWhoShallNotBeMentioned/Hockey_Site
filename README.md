@@ -21,6 +21,9 @@ Daily Schedule:
 
 This schedule is for all teams on the current day. Column headings are sortable. Data is from live SportsRadar API. Would eventually like to have the ability to search by a specific day.
 
+API
+ Currently Outbound only with just posts. URL: http://localhost:3000/api/posts Uses JSON.
+
 ## Setup/Installation Requirements
 
 Clone the repo to your local machine.

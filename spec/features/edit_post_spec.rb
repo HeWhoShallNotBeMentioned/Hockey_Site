@@ -7,7 +7,6 @@ describe "the add a new post process", :js => true do
     fill_in "Username", :with => user.username
     fill_in "Password", :with => user.password
     click_on "Log in"
-
   end
 
   it "adds a new question" do
@@ -15,10 +14,11 @@ describe "the add a new post process", :js => true do
     post = FactoryGirl.create(:post)
     log_in(user)
     visit posts_path
-    click_on "New Post"
-    fill_in "Title", :with => post.title
-    fill_in "Body", :with => post.body
-    click_on "Create Post"
-    expect(page).to have_content "Larkin"
+    click_on "Larkin Rules"
+    click_on "Edit Post"
+    fill_in "Title", :with => "Larkin Is Great"
+    fill_in "Body", :with => "Better than Federov"
+    click_on "Update Post"
+    expect(page).to have_content "Larkin Is Great"
   end
 end

@@ -8,5 +8,6 @@ FactoryGirl.define do
     username "Stevie_Y"
     email "S_Yzerman@AOL.com"
     password "password"
+    admin true
   end
 end

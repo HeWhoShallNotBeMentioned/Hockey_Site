@@ -9,7 +9,7 @@
 </div>
 <p>
   <% if current_user && current_user.admin %>
-    <%= link_to 'Edit', edit_post_path(@post), class: 'btn btn-info', remote: true, id: 'edit_post_link' %>
+    <%= link_to 'Edit Post', edit_post_path(@post), class: 'btn btn-info', remote: true, id: 'edit_post_link' %>
     <%= link_to 'Delete', @post, class: 'btn btn-danger', method: :delete, data: { confirm: 'Are you sure?' } %>
   <% end %>
 </p>
@@ -20,7 +20,7 @@
     <%= link_to tag.name, tag_path(tag)  %>
       <% if current_user && current_user.admin %>
       <br>
-        <%= link_to 'Edit', edit_post_tag_path(@post, tag), class: 'btn btn-info', remote: true, id: "edit_tag_link" %>
+        <%= link_to 'Edit Tag', edit_post_tag_path(@post, tag), class: 'btn btn-info', remote: true, id: "edit_tag_link" %>
         <%= link_to 'Delete', post_tag_path(@post, tag, remove_tag: "true"), class: 'btn btn-danger', data: {confirm: "Are you sure?", method: "delete"} %></li>
       <% end %>
       <br>

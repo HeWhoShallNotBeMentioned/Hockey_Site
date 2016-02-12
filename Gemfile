@@ -13,7 +13,6 @@ gem 'devise'
 gem 'hirb', '~>0.7.0'
 gem 'httparty'
 gem 'dotenv-rails'
-gem 'redis'
 gem 'jsonpath', '~> 0.5.8'
 gem 'jquery-tablesorter', '~> 1.19', '>= 1.19.4'
 gem 'jquery-turbolinks'
@@ -39,6 +38,7 @@ group :test do
   gem 'factory_girl_rails'
   gem 'simplecov', require: false
   gem 'selenium-webdriver'
+  gem 'poltergeist'
 end
 
 group :production do
