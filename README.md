@@ -6,6 +6,8 @@
 
 ## Description
 
+https://morning-garden-40129.herokuapp.com/
+
 This is my end of class project for Epicodus. The hope is to show a range of skills as well as following programming best practices.
 The site is in 3 parts: 1) a hockey related blog, 2) a team stats section, and 3) a daily schedule. Authentication is provided by the Devise gem.
 
@@ -22,7 +24,7 @@ Daily Schedule:
 This schedule is for all teams on the current day. Column headings are sortable. Data is from live SportsRadar API. Would eventually like to have the ability to search by a specific day.
 
 API
- Currently Outbound only with just posts. URL: http://localhost:3000/api/posts Uses JSON.
+ Currently Outbound only with just posts. URL: https://morning-garden-40129.herokuapp.com/api/posts Uses JSON.
 
 ## Setup/Installation Requirements
 
