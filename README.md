@@ -21,6 +21,7 @@ Daily Schedule:
 
 This schedule is for all teams on the current day. Column headings are sortable. Data is from live SportsRadar test API. Would eventually like to have the ability to search by a specific day.
 
+
 API Currently Outbound only with just posts. URL: https://morning-garden-40129.herokuapp.com/api/posts Uses JSON.
 
 Setup/Installation Requirements
