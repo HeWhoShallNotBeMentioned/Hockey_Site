@@ -17,11 +17,11 @@ Consists of posts, comments, and tags. All users can view blog posts, comments, 
 
 Team Stats:
 
-Must be an authenticated user to view stats. Column heading are sortable. Data is from live SportsRadar API using their testing database. There are currently 5 teams that can be chosen. If I ever go with live/accurate/pay data, will look to add other teams.
+Must be an authenticated user to view stats. Column heading are sortable. Data is from live SportsRadar test API using their testing database. There are currently 5 teams that can be chosen. If I ever go with live/accurate/pay data, will look to add other teams.
 
 Daily Schedule:
 
-This schedule is for all teams on the current day. Column headings are sortable. Data is from live SportsRadar API. Would eventually like to have the ability to search by a specific day.
+This schedule is for all teams on the current day. Column headings are sortable. Data is from live SportsRadar test API. Would eventually like to have the ability to search by a specific day.
 
 API
  Currently Outbound only with just posts. URL: https://morning-garden-40129.herokuapp.com/api/posts Uses JSON.
