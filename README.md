@@ -1,6 +1,6 @@
 # Hockey Site
 
-#### NHL related blog, team stats, and daily schedule, 2/2/2016
+#### NHL related blog, team stats, and daily schedule, 2/12/2016
 
 #### By Chris Underwood
 
