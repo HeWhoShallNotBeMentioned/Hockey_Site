@@ -10,7 +10,7 @@
 <p>
   <% if current_user && current_user.admin %>
     <%= link_to 'Edit Post', edit_post_path(@post), class: 'btn btn-info', remote: true, id: 'edit_post_link' %>
-    <%= link_to 'Delete', @post, class: 'btn btn-danger', method: :delete, data: { confirm: 'Are you sure?' } %>
+    <%= link_to 'Delete Post', @post, class: 'btn btn-danger', method: :delete, data: { confirm: 'Are you sure?' } %>
   <% end %>
 </p>
 
@@ -21,7 +21,7 @@
       <% if current_user && current_user.admin %>
       <br>
         <%= link_to 'Edit Tag', edit_post_tag_path(@post, tag), class: 'btn btn-info', remote: true, id: "edit_tag_link" %>
-        <%= link_to 'Delete', post_tag_path(@post, tag, remove_tag: "true"), class: 'btn btn-danger', data: {confirm: "Are you sure?", method: "delete"} %></li>
+        <%= link_to 'Delete Tag', post_tag_path(@post, tag, remove_tag: "true"), class: 'btn btn-danger', data: {confirm: "Are you sure?", method: "delete"} %></li>
       <% end %>
       <br>
       <br>
@@ -44,8 +44,8 @@
     </div>
     <br>
     <% if current_user && current_user.admin %>
-      <%= link_to 'Edit', edit_post_comment_path(@post, comment), class: 'btn btn-info',remote: true, id: "edit_comment_link" %>
-      <%= link_to 'Delete', post_comment_path(@post, comment), class: 'btn btn-danger', data: {confirm: "Are you sure?"}, method: "delete"%>
+      <%= link_to 'Edit Comment', edit_post_comment_path(@post, comment), class: 'btn btn-info',remote: true, id: "edit_comment_link" %>
+      <%= link_to 'Delete Comment', post_comment_path(@post, comment), class: 'btn btn-danger', data: {confirm: "Are you sure?"}, method: "delete"%>
     <% end %>
     <br>
   <% end %>
