@@ -5,7 +5,7 @@
     <meta http-equiv="content-type" content="text/html; charset=utf-8" />
     <script src='./assets/0.10.0/application.js' type='text/javascript'></script>    
     <link href='./assets/0.10.0/application.css' media='screen, projection, print' rel='stylesheet' type='text/css'>
-    <link rel="shortcut icon" type="image/png" href="./assets/0.10.0/favicon_yellow.png" />
+    <link rel="shortcut icon" type="image/png" href="./assets/0.10.0/favicon_green.png" />
     <link rel="icon" type="image/png" href="./assets/0.10.0/favicon.png" />
   </head>
   
@@ -14,27 +14,27 @@
       <img src="./assets/0.10.0/loading.gif" alt="loading"/>
     </div>
     <div id="wrapper" style="display:none;">
-      <div class="timestamp">Generated <abbr class="timeago" title="2016-02-20T14:46:14-08:00">2016-02-20T14:46:14-08:00</abbr></div>
+      <div class="timestamp">Generated <abbr class="timeago" title="2016-02-20T14:51:26-08:00">2016-02-20T14:51:26-08:00</abbr></div>
       <ul class="group_tabs"></ul>
 
       <div id="content">
         <div class="file_list_container" id="AllFiles">
   <h2>
     <span class="group_name">All Files</span>
-    (<span class="covered_percent"><span class="yellow">85.59%</span></span>
+    (<span class="covered_percent"><span class="green">90.52%</span></span>
      covered at
      <span class="covered_strength">
        <span class="green">
-         1.72
+         2.4
        </span>
     </span> hits/line)
   </h2>
   <a name="AllFiles"></a>
   <div>
-    <b>47</b> files in total.
-    <b>479</b> relevant lines. 
-    <span class="green"><b>410</b> lines covered</span> and
-    <span class="red"><b>69</b> lines missed </span>
+    <b>48</b> files in total.
+    <b>485</b> relevant lines. 
+    <span class="green"><b>439</b> lines covered</span> and
+    <span class="red"><b>46</b> lines missed </span>
   </div>
   <table class="file_list">
     <thead>
@@ -67,7 +67,7 @@
         <td>8</td>
         <td>8</td>
         <td>0</td>
-        <td>8.5</td>
+        <td>9.4</td>
       </tr>
       
       <tr>
@@ -112,12 +112,12 @@
       
       <tr>
         <td class="strong"><a href="#d6b9cc706294bb8e7dbbd013f09fd15b995e481b" class="src_link" title="app/controllers/team_stats_controller.rb">app/controllers/team_stats_controller.rb</a></td>
-        <td class="red strong">17.86 %</td>
+        <td class="green strong">100.0 %</td>
         <td>47</td>
         <td>28</td>
-        <td>5</td>
-        <td>23</td>
-        <td>0.2</td>
+        <td>28</td>
+        <td>0</td>
+        <td>11.6</td>
       </tr>
       
       <tr>
@@ -441,6 +441,16 @@
       </tr>
       
       <tr>
+        <td class="strong"><a href="#31d2fc6362f2704eea8b3b737fecf0dcb96937c1" class="src_link" title="spec/features/view_team_stats_spec.rb">spec/features/view_team_stats_spec.rb</a></td>
+        <td class="green strong">100.0 %</td>
+        <td>9</td>
+        <td>6</td>
+        <td>6</td>
+        <td>0</td>
+        <td>1.0</td>
+      </tr>
+      
+      <tr>
         <td class="strong"><a href="#cb08667f17565b6ee2f40de38bbcc051898819f6" class="src_link" title="spec/helpers/create_comment_helper.rb">spec/helpers/create_comment_helper.rb</a></td>
         <td class="red strong">28.57 %</td>
         <td>9</td>
@@ -467,7 +477,7 @@
         <td>7</td>
         <td>7</td>
         <td>0</td>
-        <td>6.7</td>
+        <td>7.4</td>
       </tr>
       
       <tr>
@@ -517,7 +527,7 @@
         <td>22</td>
         <td>22</td>
         <td>0</td>
-        <td>2.4</td>
+        <td>2.5</td>
       </tr>
       
     </tbody>
@@ -688,20 +698,20 @@
           <code class="ruby">  def configure_permitted_parameters</code>
         </li>
       
-        <li class="covered" data-hits="18" data-linenumber="11">
-          <span class="hits">18</span>
+        <li class="covered" data-hits="20" data-linenumber="11">
+          <span class="hits">20</span>
           
           <code class="ruby">    devise_parameter_sanitizer.for(:sign_up) { |u| u.permit(:username, :email, :password, :password_confirmation, :remember_me) }</code>
         </li>
       
-        <li class="covered" data-hits="27" data-linenumber="12">
-          <span class="hits">27</span>
+        <li class="covered" data-hits="30" data-linenumber="12">
+          <span class="hits">30</span>
           
           <code class="ruby">    devise_parameter_sanitizer.for(:sign_in) { |u| u.permit(:login, :username, :email, :password, :remember_me) }</code>
         </li>
       
-        <li class="covered" data-hits="18" data-linenumber="13">
-          <span class="hits">18</span>
+        <li class="covered" data-hits="20" data-linenumber="13">
+          <span class="hits">20</span>
           
           <code class="ruby">    devise_parameter_sanitizer.for(:account_update) { |u| u.permit(:username, :email, :password, :password_confirmation, :current_password) }</code>
         </li>
@@ -1174,14 +1184,14 @@
           <code class="ruby">  def index</code>
         </li>
       
-        <li class="covered" data-hits="19" data-linenumber="7">
-          <span class="hits">19</span>
+        <li class="covered" data-hits="20" data-linenumber="7">
+          <span class="hits">20</span>
           
           <code class="ruby">    @posts = Post.all.paginate(page: params[:page], per_page: 2)</code>
         </li>
       
-        <li class="covered" data-hits="19" data-linenumber="8">
-          <span class="hits">19</span>
+        <li class="covered" data-hits="20" data-linenumber="8">
+          <span class="hits">20</span>
           
           <code class="ruby">    render :index</code>
         </li>
@@ -2369,11 +2379,11 @@
         <div class="source_table" id="d6b9cc706294bb8e7dbbd013f09fd15b995e481b">
   <div class="header">
     <h3>app/controllers/team_stats_controller.rb</h3>
-    <h4><span class="red">17.86 %</span> covered</h4>
+    <h4><span class="green">100.0 %</span> covered</h4>
     <div>
       <b>28</b> relevant lines. 
-      <span class="green"><b>5</b> lines covered</span> and
-      <span class="red"><b>23</b> lines missed.</span>
+      <span class="green"><b>28</b> lines covered</span> and
+      <span class="red"><b>0</b> lines missed.</span>
     </div>
   </div>
   
@@ -2440,8 +2450,8 @@
           <code class="ruby"></code>
         </li>
       
-        <li class="missed" data-hits="0" data-linenumber="11">
-          
+        <li class="covered" data-hits="1" data-linenumber="11">
+          <span class="hits">1</span>
           
           <code class="ruby">  require &#39;net/http&#39;</code>
         </li>
@@ -2452,8 +2462,8 @@
           <code class="ruby"></code>
         </li>
       
-        <li class="missed" data-hits="0" data-linenumber="13">
-          
+        <li class="covered" data-hits="1" data-linenumber="13">
+          <span class="hits">1</span>
           
           <code class="ruby">    @team = params[:team] || &quot;NYR&quot;</code>
         </li>
@@ -2470,14 +2480,14 @@
           <code class="ruby"></code>
         </li>
       
-        <li class="missed" data-hits="0" data-linenumber="16">
-          
+        <li class="covered" data-hits="1" data-linenumber="16">
+          <span class="hits">1</span>
           
           <code class="ruby">  uri = URI(&quot;https://api.fantasydata.net/nhl/v2/JSON/PlayerSeasonStatsByTeam/2016/#{@team}&quot;)</code>
         </li>
       
-        <li class="missed" data-hits="0" data-linenumber="17">
-          
+        <li class="covered" data-hits="1" data-linenumber="17">
+          <span class="hits">1</span>
           
           <code class="ruby">  uri.query = URI.encode_www_form({</code>
         </li>
@@ -2494,8 +2504,8 @@
           <code class="ruby"></code>
         </li>
       
-        <li class="missed" data-hits="0" data-linenumber="20">
-          
+        <li class="covered" data-hits="1" data-linenumber="20">
+          <span class="hits">1</span>
           
           <code class="ruby">  request = Net::HTTP::Get.new(uri.request_uri)</code>
         </li>
@@ -2506,8 +2516,8 @@
           <code class="ruby">  # Request headers</code>
         </li>
       
-        <li class="missed" data-hits="0" data-linenumber="22">
-          
+        <li class="covered" data-hits="1" data-linenumber="22">
+          <span class="hits">1</span>
           
           <code class="ruby">  request[&#39;Ocp-Apim-Subscription-Key&#39;] = &#39;74313a2ed9044ceaaf459408c2f4f781&#39;</code>
         </li>
@@ -2518,8 +2528,8 @@
           <code class="ruby">  # Request body</code>
         </li>
       
-        <li class="missed" data-hits="0" data-linenumber="24">
-          
+        <li class="covered" data-hits="1" data-linenumber="24">
+          <span class="hits">1</span>
           
           <code class="ruby">  request.body = &quot;{body}&quot;</code>
         </li>
@@ -2530,14 +2540,14 @@
           <code class="ruby"></code>
         </li>
       
-        <li class="missed" data-hits="0" data-linenumber="26">
-          
+        <li class="covered" data-hits="1" data-linenumber="26">
+          <span class="hits">1</span>
           
           <code class="ruby">  @response = Net::HTTP.start(uri.host, uri.port, :use_ssl =&gt; uri.scheme == &#39;https&#39;) do |http|</code>
         </li>
       
-        <li class="missed" data-hits="0" data-linenumber="27">
-          
+        <li class="covered" data-hits="1" data-linenumber="27">
+          <span class="hits">1</span>
           
           <code class="ruby">      http.request(request)</code>
         </li>
@@ -2554,8 +2564,8 @@
           <code class="ruby"></code>
         </li>
       
-        <li class="missed" data-hits="0" data-linenumber="30">
-          
+        <li class="covered" data-hits="1" data-linenumber="30">
+          <span class="hits">1</span>
           
           <code class="ruby">  puts @response.body</code>
         </li>
@@ -2566,80 +2576,80 @@
           <code class="ruby"></code>
         </li>
       
-        <li class="missed" data-hits="0" data-linenumber="32">
-          
+        <li class="covered" data-hits="1" data-linenumber="32">
+          <span class="hits">1</span>
           
           <code class="ruby">  @response_body = []</code>
         </li>
       
-        <li class="missed" data-hits="0" data-linenumber="33">
-          
+        <li class="covered" data-hits="1" data-linenumber="33">
+          <span class="hits">1</span>
           
           <code class="ruby">  @response_body = JSON.parse(@response.body)</code>
         </li>
       
-        <li class="missed" data-hits="0" data-linenumber="34">
-          
+        <li class="covered" data-hits="28" data-linenumber="34">
+          <span class="hits">28</span>
           
           <code class="ruby">  @player_name = @response_body.map{|x| x[&quot;Name&quot;]}</code>
         </li>
       
-        <li class="missed" data-hits="0" data-linenumber="35">
-          
+        <li class="covered" data-hits="28" data-linenumber="35">
+          <span class="hits">28</span>
           
           <code class="ruby">  @player_position = @response_body.map{|x| x[&quot;Position&quot;]}</code>
         </li>
       
-        <li class="missed" data-hits="0" data-linenumber="36">
-          
+        <li class="covered" data-hits="28" data-linenumber="36">
+          <span class="hits">28</span>
           
           <code class="ruby">  @player_games = @response_body.map{|x| x[&quot;Games&quot;]}</code>
         </li>
       
-        <li class="missed" data-hits="0" data-linenumber="37">
-          
+        <li class="covered" data-hits="28" data-linenumber="37">
+          <span class="hits">28</span>
           
           <code class="ruby">  @player_goals = @response_body.map{|x| x[&quot;Goals&quot;]}</code>
         </li>
       
-        <li class="missed" data-hits="0" data-linenumber="38">
-          
+        <li class="covered" data-hits="28" data-linenumber="38">
+          <span class="hits">28</span>
           
           <code class="ruby">  @player_assists = @response_body.map{|x| x[&quot;Assists&quot;]}</code>
         </li>
       
-        <li class="missed" data-hits="0" data-linenumber="39">
-          
+        <li class="covered" data-hits="28" data-linenumber="39">
+          <span class="hits">28</span>
           
           <code class="ruby">  @player_plus_minus = @response_body.map{|x| x[&quot;PlusMinus&quot;]}</code>
         </li>
       
-        <li class="missed" data-hits="0" data-linenumber="40">
-          
+        <li class="covered" data-hits="28" data-linenumber="40">
+          <span class="hits">28</span>
           
           <code class="ruby">  @player_hits = @response_body.map{|x| x[&quot;Hits&quot;]}</code>
         </li>
       
-        <li class="missed" data-hits="0" data-linenumber="41">
-          
+        <li class="covered" data-hits="28" data-linenumber="41">
+          <span class="hits">28</span>
           
           <code class="ruby">  @player_blocks = @response_body.map{|x| x[&quot;Blocks&quot;]}</code>
         </li>
       
-        <li class="missed" data-hits="0" data-linenumber="42">
-          
+        <li class="covered" data-hits="28" data-linenumber="42">
+          <span class="hits">28</span>
           
           <code class="ruby">  @player_penalities = @response_body.map{|x| x[&quot;PenaltyMinutes&quot;]}</code>
         </li>
       
-        <li class="missed" data-hits="0" data-linenumber="43">
-          
+        <li class="covered" data-hits="28" data-linenumber="43">
+          <span class="hits">28</span>
           
           <code class="ruby">  @player_takeaways = @response_body.map{|x| x[&quot;Takeaways&quot;]}</code>
         </li>
       
-        <li class="missed" data-hits="0" data-linenumber="44">
-          
+        <li class="covered" data-hits="28" data-linenumber="44">
+          <span class="hits">28</span>
           
           <code class="ruby">  @player_giveaways = @response_body.map{|x| x[&quot;Giveaways&quot;]}</code>
         </li>
@@ -7490,6 +7500,78 @@
   </pre>
 </div>
       
+        <div class="source_table" id="31d2fc6362f2704eea8b3b737fecf0dcb96937c1">
+  <div class="header">
+    <h3>spec/features/view_team_stats_spec.rb</h3>
+    <h4><span class="green">100.0 %</span> covered</h4>
+    <div>
+      <b>6</b> relevant lines. 
+      <span class="green"><b>6</b> lines covered</span> and
+      <span class="red"><b>0</b> lines missed.</span>
+    </div>
+  </div>
+  
+  <pre>
+    <ol>
+      
+        <li class="covered" data-hits="1" data-linenumber="1">
+          <span class="hits">1</span>
+          
+          <code class="ruby">require &#39;rails_helper&#39;</code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="2">
+          
+          
+          <code class="ruby"></code>
+        </li>
+      
+        <li class="covered" data-hits="1" data-linenumber="3">
+          <span class="hits">1</span>
+          
+          <code class="ruby">describe &quot;view the team specs process&quot;, :js =&gt; true do</code>
+        </li>
+      
+        <li class="covered" data-hits="1" data-linenumber="4">
+          <span class="hits">1</span>
+          
+          <code class="ruby">  it &quot;will make sure that data shows on the screen &quot; do</code>
+        </li>
+      
+        <li class="covered" data-hits="1" data-linenumber="5">
+          <span class="hits">1</span>
+          
+          <code class="ruby">    login_user</code>
+        </li>
+      
+        <li class="covered" data-hits="1" data-linenumber="6">
+          <span class="hits">1</span>
+          
+          <code class="ruby">    visit team_stats_path</code>
+        </li>
+      
+        <li class="covered" data-hits="1" data-linenumber="7">
+          <span class="hits">1</span>
+          
+          <code class="ruby">    expect(page).to have_content(&quot;0.0&quot;)</code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="8">
+          
+          
+          <code class="ruby">  end</code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="9">
+          
+          
+          <code class="ruby">end</code>
+        </li>
+      
+    </ol>
+  </pre>
+</div>
+      
         <div class="source_table" id="cb08667f17565b6ee2f40de38bbcc051898819f6">
   <div class="header">
     <h3>spec/helpers/create_comment_helper.rb</h3>
@@ -7666,32 +7748,32 @@
           <code class="ruby">def login_user</code>
         </li>
       
-        <li class="covered" data-hits="9" data-linenumber="4">
-          <span class="hits">9</span>
+        <li class="covered" data-hits="10" data-linenumber="4">
+          <span class="hits">10</span>
           
           <code class="ruby">  user = FactoryGirl.create(:user)</code>
         </li>
       
-        <li class="covered" data-hits="9" data-linenumber="5">
-          <span class="hits">9</span>
+        <li class="covered" data-hits="10" data-linenumber="5">
+          <span class="hits">10</span>
           
           <code class="ruby">  visit new_user_session_path</code>
         </li>
       
-        <li class="covered" data-hits="9" data-linenumber="6">
-          <span class="hits">9</span>
+        <li class="covered" data-hits="10" data-linenumber="6">
+          <span class="hits">10</span>
           
           <code class="ruby">  fill_in &quot;Username&quot;, :with =&gt; user.username</code>
         </li>
       
-        <li class="covered" data-hits="9" data-linenumber="7">
-          <span class="hits">9</span>
+        <li class="covered" data-hits="10" data-linenumber="7">
+          <span class="hits">10</span>
           
           <code class="ruby">  fill_in &quot;Password&quot;, :with =&gt; user.password</code>
         </li>
       
-        <li class="covered" data-hits="9" data-linenumber="8">
-          <span class="hits">9</span>
+        <li class="covered" data-hits="10" data-linenumber="8">
+          <span class="hits">10</span>
           
           <code class="ruby">  click_on &quot;Log in&quot;</code>
         </li>
@@ -8218,14 +8300,14 @@
           <code class="ruby">  config.around(:each) do |example|</code>
         </li>
       
-        <li class="covered" data-hits="16" data-linenumber="48">
-          <span class="hits">16</span>
+        <li class="covered" data-hits="17" data-linenumber="48">
+          <span class="hits">17</span>
           
           <code class="ruby">    DatabaseCleaner.cleaning do</code>
         </li>
       
-        <li class="covered" data-hits="16" data-linenumber="49">
-          <span class="hits">16</span>
+        <li class="covered" data-hits="17" data-linenumber="49">
+          <span class="hits">17</span>
           
           <code class="ruby">      example.run</code>
         </li>
