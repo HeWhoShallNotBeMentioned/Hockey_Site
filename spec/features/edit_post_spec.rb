@@ -3,7 +3,7 @@ require 'helpers/login_helper'
 
 describe "the add a new post process", :js => true do
 
-  it "adds a new question" do
+  it "adds a new post" do
     post = FactoryGirl.create(:post)
     login_user
     visit posts_path

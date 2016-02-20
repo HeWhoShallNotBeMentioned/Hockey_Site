@@ -10,4 +10,8 @@ FactoryGirl.define do
     password "password"
     admin true
   end
+
+  factory :comment do
+    body "Your mama smells like turpentine..."
+  end
 end
