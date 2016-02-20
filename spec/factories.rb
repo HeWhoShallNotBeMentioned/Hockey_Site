@@ -14,4 +14,8 @@ FactoryGirl.define do
   factory :comment do
     body "Your mama smells like turpentine..."
   end
+
+  factory :tag do 
+    name "knockout"
+  end
 end
